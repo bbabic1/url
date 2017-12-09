@@ -82,6 +82,7 @@
           </div>
         </form>
       </div>
+      @include ('contact')
     </div>
   </body>
 </html>
