@@ -113,5 +113,7 @@
   </div>
 </section><!-- hero section -->
 <section class="main">
-  @include('modals.about');
+  @include('modals.about')
 </section>
+@include('partials.contact')
+@include('partials.footer')
