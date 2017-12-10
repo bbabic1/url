@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreateUrlRequest;
 use ReCaptcha\ReCaptcha;
 use App\URL;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class UrlController extends Controller
 {
@@ -84,11 +84,13 @@ class UrlController extends Controller
         $statusMessage = "";
         $remoteIp = $request->ip();
         $urlToShorten = $request->url;
+        $id = Auth::id();
         $tag = $request->desired_id ? $request->desired_id : $this->generateRandomTag();
         $gResponse = $request['g-recaptcha-response'];
 
         if ($this->captchaCheck($gResponse, $remoteIp)) {
             $url = new URL;
+            $url->user_id = $id ? $id : null;
             $url->tag = $tag;
             $url->created_by_ip = $remoteIp;
             $url->url = $urlToShorten;
