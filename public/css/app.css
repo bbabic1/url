@@ -10142,4 +10142,111 @@ label.panel-block:hover {
   background: rgba(0, 0, 0, 0.3) !important;
 }
 
+.pricing {
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 60px 0;
+  display: -webkit-box;
+  display: flex;
+}
+
+.pricing .silver {
+  margin-right: 25px;
+}
+
+.pricing .silver,
+.pricing .plat {
+  float: left;
+  width: 250px;
+  background: white;
+  text-align: center;
+}
+
+.pricing .gold {
+  float: left;
+  position: relative;
+  width: 250px;
+  top: -50px;
+  padding: 50px 0;
+  background: #3498db;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.pricing .gold > .price {
+  background: white;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.pricing .gold > h1,
+.pricing .gold > h2,
+.pricing .gold > p,
+.pricing .gold > span {
+  color: white;
+}
+
+.pricing h1 {
+  margin: 20px 0 10px 0;
+  font-size: 1.25em;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.pricing h2 {
+  font-size: 0.75em;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.pricing p {
+  color: rgba(0, 0, 0, 0.4);
+  margin: 10px 0;
+  font-weight: 100;
+  font-size: 0.75em;
+}
+
+.pricing span {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  display: inline-block;
+  width: 125px;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing .price {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  line-height: 100px;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 20px auto;
+}
+
+.pricing button {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+  height: 35px;
+  border-bottom: 5px solid #c0392b;
+  background: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 100;
+  transition: all ease-in-out 0.2s;
+}
+
+.pricing button:hover {
+  background: #c0392b;
+}
+
 /*# sourceMappingURL=app.css.map */

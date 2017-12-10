@@ -28,7 +28,7 @@
             <a class="navbar-item modal-trigger" id="about-trigger" onClick="openModal('#about-modal')">
               About
             </a>
-            <a class="navbar-item modal-trigger" data-target="#pricing-modal" id="pricing-trigger">
+            <a class="navbar-item modal-trigger" id="pricing-trigger" onClick="openModal('#pricing-modal')">
               Pricing
             </a>
             @else
@@ -114,6 +114,7 @@
 </section><!-- hero section -->
 <section class="main">
   @include('modals.about')
+  @include('modals.pricing')
 </section>
 @include('partials.contact')
 @include('partials.footer')
