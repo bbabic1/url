@@ -1,11 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateUrlRequest;
 use ReCaptcha\ReCaptcha;
 use App\URL;
+use Auth;
 
 class UrlController extends Controller
 {
@@ -16,7 +16,8 @@ class UrlController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        return view('welcome', compact('user'));
     }
 
     /**
@@ -34,8 +35,10 @@ class UrlController extends Controller
      *
      * @return Response
      */
-    public function recentUrls() {
-        $urls = Url::orderBy('created_at', 'desc')->limit(10)->get();
+    public function recentUrls()
+    {
+        $id = Auth::id();
+        $urls = Url::where('user_id', $id)->orderBy('created_at', 'desc')->limit(10)->get();
         return view('recent', compact('urls'));
     }
 
@@ -44,7 +47,8 @@ class UrlController extends Controller
      *
      * @return Response
      */
-    public function topUrls() {
+    public function topUrls()
+    {
         $urls = Url::orderBy('counter', 'desc')->limit(10)->get();
         return view('top', compact('urls'));
     }
@@ -56,10 +60,11 @@ class UrlController extends Controller
      * @param $tag identifiyng the URL
      * @return redirect
      */
-    public function redirect($tag) {
+    public function redirect($tag)
+    {
         $url = Url::where('tag', $tag)->first();
 
-        if($url) {
+        if ($url) {
             $url->counter++;
             $url->save();
             return redirect($url->url);
@@ -77,18 +82,18 @@ class UrlController extends Controller
     public function store(CreateUrlRequest $request)
     {
         $statusMessage = "";
-        $remoteIp      = $request->ip();
-        $urlToShorten  = $request->url;
-        $tag           = $request->desired_id ? $request->desired_id : $this->generateRandomTag();
-        $gResponse     = $request['g-recaptcha-response'];
+        $remoteIp = $request->ip();
+        $urlToShorten = $request->url;
+        $tag = $request->desired_id ? $request->desired_id : $this->generateRandomTag();
+        $gResponse = $request['g-recaptcha-response'];
 
-        if( $this->captchaCheck($gResponse, $remoteIp) ) {
+        if ($this->captchaCheck($gResponse, $remoteIp)) {
             $url = new URL;
             $url->tag = $tag;
             $url->created_by_ip = $remoteIp;
             $url->url = $urlToShorten;
             $url->save();
-            $statusMessage = "Created your URL.  <a href=\"http://mutiny.co/$tag\">mutiny.co/$tag</a>";
+            $statusMessage = "Created your URL.  <a href=\"http://third.dev/$tag\">third.dev/$tag</a>";
         } else {
             $statusMessage = "Failed reCAPTCHA!";
         }
@@ -102,7 +107,8 @@ class UrlController extends Controller
      *
      * @return $randomTag
      */
-    private function generateRandomTag() {
+    private function generateRandomTag()
+    {
         $randomTag = '';
         // Loop until $randomTag is not empty and not an existing tag
         while ($randomTag == '' || URL::where('tag', $randomTag)->count() != 0) {
@@ -120,7 +126,7 @@ class UrlController extends Controller
      */
     private function captchaCheck($gResponse, $remoteIp)
     {
-        $secret   = env('RE_CAP_SECRET');
+        $secret = env('RE_CAP_SECRET');
 
         $recaptcha = new ReCaptcha($secret);
         $resp = $recaptcha->verify($gResponse, $remoteIp);

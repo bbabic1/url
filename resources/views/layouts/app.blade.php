@@ -16,9 +16,11 @@
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
+                            'csrfToken' => csrf_token(),
+                        ]); ?>
     </script>
+    <!-- Google reCAPTCHA -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
     <div id="app">
