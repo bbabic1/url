@@ -67,38 +67,40 @@
 
   <div class="hero-body">
     <div class="container has-text-centered">
-      <form class="form-horizontal" action="/create" method="post">
+      
+      <form class="panel" action="/create" method="post">
           {{ csrf_field() }}
+          <div class="panel-heading">
 
           <div class="field has-addons">
-            <label for="url" class="label">URL to Shorten:</label>
-              <div class="control">
-                <input type="text" class="input" name="url" id="url" placeholder="https://google.com">
+              <div class="control control--url">
+                <input type="text" class="input is-large" name="url" id="url" placeholder="https://google.com">
               </div>
               <div class="control">
-                <input type="submit" class="button is-info" value="Shorten url" />
+                <input type="submit" class="button is-info is-large" value="Shorten url" />
               </div>
           </div><!-- shorten -->
-
+          
           <div class="field has-addons">
-             <label for="desired_id" class="label">Desired id</label>
-             <div class="control">
-              <a class="button is-static">
+            <div class="control">
+              <a class="button is-static is-medium">
                 http://third.dev/
               </a>
             </div>
 
             <div class="control">
-              <input type="text" class="input" name="desired_id" id="desired_id" placeholder="123">
+              <input type="text" class="input is-medium" name="desired_id" id="desired_id" placeholder="123">
             </div>
+            <p class="control">
+              <div class="g-recaptcha" data-sitekey="6LdQZDsUAAAAADry7S1Xzxp-c5XrSVb3jO1u39ol"></div>
+            </p>
           </div><!-- desired id -->
 
-          <div class="field">
-            <div class="control">
-              <div class="g-recaptcha" data-sitekey="6LdQZDsUAAAAADry7S1Xzxp-c5XrSVb3jO1u39ol"></div>
-            </div>
-          </div><!--recaptcha -->
-
+          <div class="control">
+            <div class="g-recaptcha" data-sitekey="6LdQZDsUAAAAADry7S1Xzxp-c5XrSVb3jO1u39ol"></div>
+          </div>
+          
+        </div><!-- panel-heading -->
           
         </form>
     </div>

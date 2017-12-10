@@ -4,6 +4,10 @@
 @import "variables";
 
 // hero
+.g-recaptcha {
+  transform: scale(0.59);
+  transform-origin: 0 0;
+}
 
 .hero {
   &__bg,
@@ -41,6 +45,20 @@
   .hero-body {
     .container {
       max-width: 960px !important;
+    }
+
+    .panel-heading {
+      padding: 40px;
+      border: none !important;
+      background: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .control--url {
+      width: 100%;
+    }
+
+    input[name="url"] {
+      width: 100%;
     }
   }
 }

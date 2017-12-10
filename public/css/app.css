@@ -10078,6 +10078,13 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+.g-recaptcha {
+  -webkit-transform: scale(0.59);
+  transform: scale(0.59);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
 .hero__bg, .hero__overlay {
   position: absolute;
   top: 0;
@@ -10107,6 +10114,20 @@ label.panel-block:hover {
 
 .hero .hero-body .container {
   max-width: 960px !important;
+}
+
+.hero .hero-body .panel-heading {
+  padding: 40px;
+  border: none !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+.hero .hero-body .control--url {
+  width: 100%;
+}
+
+.hero .hero-body input[name="url"] {
+  width: 100%;
 }
 
 .navbar-item.is-active {
