@@ -10085,6 +10085,10 @@ label.panel-block:hover {
   transform-origin: 0 0;
 }
 
+.hero {
+  position: relative;
+}
+
 .hero__bg, .hero__overlay {
   position: absolute;
   top: 0;
@@ -10257,6 +10261,10 @@ label.panel-block:hover {
 
 .pricing button:hover {
   background: #c0392b;
+}
+
+.table {
+  margin: 1.5em auto !important;
 }
 
 /*# sourceMappingURL=app.css.map */

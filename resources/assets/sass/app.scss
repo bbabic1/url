@@ -10,6 +10,8 @@
 }
 
 .hero {
+  position: relative;
+
   &__bg,
   &__overlay {
     position: absolute;
@@ -188,4 +190,10 @@
       background: rgba(192, 57, 43, 1);
     }
   }
+}
+
+//table
+
+.table {
+  margin: 1.5em auto !important;
 }
