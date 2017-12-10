@@ -3,7 +3,7 @@
 @section('content')
  <section class="hero is-fullheight">
      <div class="hero__bg"></div>
-  <div class="hero__overlay"></div>
+    <div class="hero__overlay"></div>
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-6 is-offset-3">
