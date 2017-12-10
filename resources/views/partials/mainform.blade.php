@@ -25,6 +25,12 @@
             <a class="navbar-item" href="{{ url('/register') }}">
               Register
             </a>
+            <a class="navbar-item modal-trigger" id="about-trigger" onClick="openModal('#about-modal')">
+              About
+            </a>
+            <a class="navbar-item modal-trigger" data-target="#pricing-modal" id="pricing-trigger">
+              Pricing
+            </a>
             @else
             <a class="navbar-item" href="{{url('/recent')}}">
              Recent
@@ -105,4 +111,7 @@
         </form>
     </div>
   </div>
+</section><!-- hero section -->
+<section class="main">
+  @include('modals.about');
 </section>

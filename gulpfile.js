@@ -14,7 +14,7 @@ require("laravel-elixir-vue-2");
  */
 
 elixir(mix => {
-  mix.sass("app.scss").webpack("app.js");
+  mix.sass("app.scss").webpack("main.js");
 
   mix.copy("resources/assets/img", "public/img/", false); // Don't flatten!
 });
