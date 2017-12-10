@@ -10130,6 +10130,10 @@ label.panel-block:hover {
   width: 100%;
 }
 
+.navbar-item {
+  color: white !important;
+}
+
 .navbar-item.is-active {
   color: white !important;
 }

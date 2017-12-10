@@ -33,17 +33,17 @@
              Top
             </a>
             <span class="navbar-item">
-             <div class="dropdown is-hoverable">
+             <div class="dropdown is-hoverable is-right">
                 <div class="dropdown-trigger">
-                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
                     <span>{{ Auth::user()->name }}</span>
                     <span class="icon is-small">
                       <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </span>
-                  </button>
                 </div>
                 <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                   <div class="dropdown-content">
+                    <div class="dropdown-item">Account options</div>
+                    <div class="dropdown-divider"></div>
                     <div class="dropdown-item">
                       <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
