@@ -6,8 +6,9 @@
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item">
-           <a class="navbar-item is-active" href="{{ url('/') }}">
-              {{ config('app.name', 'Laravel') }}
+           <a class="navbar-logo" href="{{ url('/') }}">
+              <img src={{ asset('img/logo-url.png') }}
+ alt="url logo" width="80px" height="80px">
             </a>
           </a>
           <span class="navbar-burger burger" data-target="navbarMenuHeroB">
@@ -37,6 +38,12 @@
             </a>
              <a class="navbar-item" href="{{url('/top')}}">
              Top
+            </a>
+            <a class="navbar-item modal-trigger" id="about-trigger" onClick="openModal('#about-modal')">
+              About
+            </a>
+            <a class="navbar-item modal-trigger" id="pricing-trigger" onClick="openModal('#pricing-modal')">
+              Pricing
             </a>
             <span class="navbar-item">
              <div class="dropdown is-hoverable is-right">

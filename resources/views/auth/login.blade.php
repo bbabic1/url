@@ -18,22 +18,22 @@
                 {{ csrf_field() }}
               <div class="field">
                 <div class="control">
-                  <input class="input" name="email" id="email" type="email" placeholder="Your Email" autofocus required value="{{ old('email') }}">
+                  <input class="input{{$errors->has('email') ? ' is-danger' : ''}}" name="email" id="email" type="email" placeholder="Your Email" autofocus required value="{{ old('email') }}">
                   @if ($errors->has('email'))
-                        <span class="block is-danger">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
+                        <p class="help is-danger">
+                            {{ $errors->first('email') }}
+                        </p>
                     @endif
                 </div>
               </div>
 
               <div class="field">
                 <div class="control">
-                  <input class="input" type="password" name="password" id="password" placeholder="Your Password" required>
+                  <input class="input{{$errors->has('password') ? ' is-danger' : ' '}}" type="password" name="password" id="password" placeholder="Your Password" required>
                 </div>
                 @if ($errors->has('password'))
-                    <span class="block is-danger">
-                        <strong>{{ $errors->first('password') }}</strong>
+                    <span class="help is-danger">
+                        {{ $errors->first('password') }}
                     </span>
                 @endif
               </div><!--password-->
