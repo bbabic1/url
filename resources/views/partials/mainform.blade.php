@@ -1,4 +1,4 @@
-<section class="hero  is-fullheight">
+<section class="hero is-fullheight">
   <div class="hero__bg"></div>
   <div class="hero__overlay"></div>
   <div class="hero-head">

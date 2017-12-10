@@ -10112,6 +10112,12 @@ label.panel-block:hover {
   opacity: 0.7;
 }
 
+.hero .has-text-grey > a,
+.hero .title,
+.hero .subtitle {
+  color: white !important;
+}
+
 .hero .hero-body .container {
   max-width: 960px !important;
 }
