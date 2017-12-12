@@ -48,4 +48,3 @@
 </table>
 </section>
 @include ('partials.footer')
-

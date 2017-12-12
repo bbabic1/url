@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/css/app.css" rel="stylesheet">
-
+    @yield('styles')
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -27,9 +27,10 @@
     <div id="app">
         @yield('content')
     </div>
-
+    
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/js/main.js"></script>
+    @yield('scripts');
 </body>
 </html>

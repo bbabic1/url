@@ -13,3 +13,5 @@ Route::post('/create', 'UrlController@store');
 
 //contact
 Route::post('/contact', 'ContactController@postContact'); 
+
+//simple api for chart on top
